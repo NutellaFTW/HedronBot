@@ -1,0 +1,55 @@
+Commands
+- funny (makes jokes)
+- troll @everyone or @name (spam random)
+- embarrass @person (so this is like dad bot and you do embarras but like spell it right then it does acts like that person and does "embarrass" them)
+- spam message (spams peoples in the messages)
+- sudo @person "message" (pretends to be a person but only problem is dat they can click it and see its just the bot)
+- america (negative america stuff)
+- russia (og russia thing something funny)
+- birthday @person (says happy birthday to them)
+- meme (memes from dank memes or just memes)
+- microbox (post the best channel on youtube)
+- games (this is kind of annoying ngl and is dumb and stupid)
+- ban @person
+- kick @person
+- doss @person (bassically just jokes about hacking maybe something like 10 % hack commplete and uses like bold fonts and stuff; ya know?)
+- news (shows most recent news or could be a funny?)
+- mute @person
+- ban @person
+- banlist (says people who were banned)
+- serious (says something serious)
+- charity (shows a link of a charity)
+- rhino (rhino party link)
+- lofi (plays lofi songs)
+- command remove "" (admin only command to remove a command)
+- command add "" (admin only command to add back a command)
+- play "" (plays songs)
+- 
+- 
+
+Other
+- bot starts off with the link to website and everything and maybe even a discord server
+- make it so if you react to something using a certain emoticon it assigns it to something like a role or something; ya-know
+- reddit stuff so like 
+- blacklisted servers
+- whitelisted servers (spams discord servers white)
+- servers able to makes it so only specific commands can write something (edit commands)
+- 
+
+
+
+
+
+
+
+
+
+
+Done Ideas
+- Change prefix command
+- 
+- 
+- 
+- 
+- 
+- 
