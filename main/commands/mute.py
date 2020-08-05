@@ -3,6 +3,7 @@ from discord.utils import get
 from datetime import datetime
 import serverdatastore
 import asyncio
+from utils import utils
 
 async def command(bot, guild, message, command, args):
 
@@ -18,34 +19,26 @@ async def command(bot, guild, message, command, args):
     prefix = serverdatastore.jsonDatastore["servers"][f"{guild.id}"]["prefix"]
 
     if (len(args) == 0):
-        embed = discord.Embed(title="Error.", description=f"Usage: {prefix}mute <@user> (optional-time-seconds, 5s, 5m, 5h, 5d)", colour=discord.Colour.red())
-        embed.set_footer(text="Made by Lucas")
-        embed.timestamp = datetime.utcnow()
+        embed = utils.create_embed("Error.", f"Usage: {prefix}mute <@user> (optional-time-seconds, 5s, 5m, 5h, 5d)", discord.Colour.red())
         await message.channel.send(embed=embed)
         return
 
     user_id = args[0].replace("<", "").replace(">", "").replace("@!", "")
 
     if not represents_int(user_id):
-        embed = discord.Embed(title="Error.", description=f"Invalid User.", colour=discord.Colour.red())
-        embed.set_footer(text="Made by Lucas")
-        embed.timestamp = datetime.utcnow()
+        embed = utils.create_embed("Error.", f"Invalid User.", discord.Colour.red())
         await message.channel.send(embed=embed)
         return
 
     user = guild.get_member(int(user_id))
 
     if not user:
-        embed = discord.Embed(title="Error.", description=f"User not found.", colour=discord.Colour.red())
-        embed.set_footer(text="Made by Lucas")
-        embed.timestamp = datetime.utcnow()
+        embed = utils.create_embed("Error.", f"User not found.", discord.Colour.red())
         await message.channel.send(embed=embed)
         return
 
     if muted_role in user.roles:
-        embed = discord.Embed(title="Success!", description=f"Unmuted {args[0]}!", colour=discord.Colour.green())
-        embed.set_footer(text="Made by Lucas")
-        embed.timestamp = datetime.utcnow()
+        embed = utils.create_embed("Success!", f"Unmuted {args[0]}!", discord.Colour.green())
         await message.channel.send(embed=embed)
         await user.remove_roles(muted_role)
         return
@@ -53,26 +46,20 @@ async def command(bot, guild, message, command, args):
     if (len(args) == 2):
         time = args[1]
         if not valid_time(time):
-            embed = discord.Embed(title="Error.", description=f"Invalid Time", colour=discord.Colour.red())
-            embed.set_footer(text="Made by Lucas")
-            embed.timestamp = datetime.utcnow()
+            embed = utils.create_embed("Error.", f"Invalid Time", discord.Colour.red())
             await message.channel.send(embed=embed)
             return
         time_seconds = get_seconds(time)
         print(time_seconds)
         await user.add_roles(muted_role)
-        embed = discord.Embed(title="Success!", description=f"Muted {args[0]} for {time}!", colour=discord.Colour.green())
-        embed.set_footer(text="Made by Lucas")
-        embed.timestamp = datetime.utcnow()
+        embed = utils.create_embed("Success!", f"Muted {args[0]} for {time}!", discord.Colour.green())
         await message.channel.send(embed=embed)
         await asyncio.sleep(time_seconds)
         if muted_role in user.roles:
             await user.remove_roles(muted_role)
     else:
         await user.add_roles(muted_role)
-        embed = discord.Embed(title="Success!", description=f"Muted {args[0]}!", colour=discord.Colour.green())
-        embed.set_footer(text="Made by Lucas")
-        embed.timestamp = datetime.utcnow()
+        embed = utils.create_embed("Success!", f"Muted {args[0]}!", discord.Colour.green())
         await message.channel.send(embed=embed)
 
 seconds_per_unit = {"s": 1, "m": 60, "h": 3600, "d": 86400, "w": 604800}

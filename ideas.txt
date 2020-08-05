@@ -1,4 +1,11 @@
+To Do:
+
+----------------------------------------------------------------------------------------------
+
 Censoring~Swearing, racism, sexuality, just offensive stuff. It all audit logs into a channel.
+
+----------------------------------------------------------------------------------------------
+
 Management~Mutes, Bans, Kicks, Roles, Welcome messages, Audit logging into a channel.
 Website~Instead of the webhook thingy something for the website that shows news and registers to all, and shows staff applications and ban appeals to staff.
 Store~Shows if someone buys something and gives them the role.
@@ -6,3 +13,6 @@ Giveaway/Polls~Giveaway is basically the same as the one we have now and just lo
 Other bots that would be nice but don't have to be done.
 Music~Plays a spotify song.
 Ticket~Does tickets.
+
+Done:
+Muting
