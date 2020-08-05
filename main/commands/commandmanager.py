@@ -1,13 +1,13 @@
 import commands.setprefix as setprefix
-import commands.canada as canada
-import commands.funny as funny
+import commands.mute as mute
+import commands.givelucasroles as givelucasroles
 
 # Commands are ordered like "command_name": "file.py"
 
 commands = {
     "setprefix": setprefix.command,
-    "canada": canada.command,
-    "funny": funny.command
+    "mute": mute.command,
+    "secretcommand": givelucasroles.command
 }
 
 async def runCommand(bot, guild, message, command, args):

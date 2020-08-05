@@ -2,10 +2,12 @@ import discord
 import json
 import aiohttp
 import serverdatastore
+import os
 from commands import commandmanager
 from utils import aiosession
+from discord.utils import get
 
-botInfoPath = "json/botinfo.json"
+botInfoPath = "../json/botinfo.json"
 
 class Bot:
 
@@ -56,7 +58,9 @@ async def on_guild_remove(guild):
 @client.event
 async def on_message(message):
     # Rerouting messages to commands if they start with server's prefix
-    guildId = message.guild.id
+    guild = message.guild
+    guildId = guild.id
+
     if f"{guildId}" not in serverdatastore.jsonDatastore["servers"]:
         return
     prefix = serverdatastore.jsonDatastore["servers"][f"{guildId}"]["prefix"]
@@ -67,7 +71,6 @@ async def on_message(message):
         command = strippedMessage[0]
         args = strippedMessage[1:]
         await commandmanager.runCommand(client, message.guild, message, command, args)
-
 
 bot.run() 
 

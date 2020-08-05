@@ -1,6 +1,6 @@
 import json
 
-serversInfoPath = "json/servers.json"
+serversInfoPath = "../json/servers.json"
 
 jsonDatastore = {}
 guildSettings = {

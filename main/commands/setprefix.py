@@ -9,7 +9,7 @@ async def command(bot, guild, message, command, args):
     prefix = datastore["servers"][f"{guild.id}"]["prefix"]
     if len(args) == 0:
         embed = discord.Embed(title="Error.", description=f"Usage: {prefix}setprefix <newprefix>", colour=discord.Colour.red())
-        embed.set_footer(text="Made by the Microbox Team")
+        embed.set_footer(text="Made by Lucas")
         embed.timestamp = datetime.utcnow()
         await message.channel.send(embed=embed)
         return
@@ -17,7 +17,7 @@ async def command(bot, guild, message, command, args):
     datastore["servers"][f"{guild.id}"]["prefix"] = newPrefix 
     serverdatastore.writeServersJson(datastore)
     embed = discord.Embed(title="Success!", description=f"Successfully changed the server prefix from '{prefix}' to '{newPrefix}'.", colour=discord.Colour.green())
-    embed.set_footer(text="Made by the Microbox Team")
+    embed.set_footer(text="Made by Lucas")
     embed.timestamp = datetime.utcnow()
     await message.channel.send(embed=embed)
 
