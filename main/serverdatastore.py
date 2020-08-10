@@ -4,8 +4,12 @@ serversInfoPath = "../json/servers.json"
 
 jsonDatastore = {}
 guildSettings = {
-    "prefix": "-"
-    }
+    "prefix": "-",
+    "autorole": "",
+    "welcome_message": "Hey %member%, welcome to QuantumCraft | MC!",
+    "welcome_channel": "welcome",
+    "audit_log_channel": "audit-log"
+}
 
 def updateDatastore( ):
     with open(serversInfoPath, "r") as jsonFile:

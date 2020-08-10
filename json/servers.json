@@ -1,7 +1,10 @@
 {
     "servers": {
         "706028878551842856": {
-            "prefix": "-"
+            "prefix": "-",
+            "autorole": "Member",
+            "welcome_message": "Hey {member}, welcome to QuantumCraft | MC!",
+            "audit_log_channel": "audit-logging"
         }
     }
 }

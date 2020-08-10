@@ -2,11 +2,14 @@ To Do:
 
 ----------------------------------------------------------------------------------------------
 
-Censoring~Swearing, racism, sexuality, just offensive stuff. It all audit logs into a channel.
+Welcome messages
+
+At the end:
+It all audit logs into a channel.
 
 ----------------------------------------------------------------------------------------------
 
-Management~Mutes, Bans, Kicks, Roles, Welcome messages, Audit logging into a channel.
+Management~ Purge messages, Audit logging into a channel.
 Website~Instead of the webhook thingy something for the website that shows news and registers to all, and shows staff applications and ban appeals to staff.
 Store~Shows if someone buys something and gives them the role.
 Giveaway/Polls~Giveaway is basically the same as the one we have now and just looks better, polls we choose the message and how long the poll and then announces the decision.
@@ -16,3 +19,8 @@ Ticket~Does tickets.
 
 Done:
 Muting
+Censoring~Swearing, racism, sexuality, just offensive stuff. 
+Bans
+Kicks
+Auto-Roles
+

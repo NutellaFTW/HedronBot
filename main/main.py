@@ -4,6 +4,7 @@ import aiohttp
 import serverdatastore
 import os
 from commands import commandmanager
+from events import eventmanager
 from utils import aiosession
 from discord.utils import get
 
@@ -37,6 +38,8 @@ client = bot.client
 @client.event
 async def on_ready():
 
+    await client.change_presence(status=discord.Status.online, activity=discord.Game("IP: quantumcraft.xyz"))
+
     oauth_url = discord.utils.oauth_url(bot.clientId, permissions=discord.Permissions(permissions=8))
     print("Bot is Ready")
     print(f"Invite link: {oauth_url}")
@@ -56,10 +59,23 @@ async def on_guild_remove(guild):
     serverdatastore.removeServer(guild)
 
 @client.event
+async def on_member_join(member):
+    await eventmanager.runEvent(client, member.guild, member, "join")
+
+@client.event
+async def on_member_remove(member):
+    await eventmanager.runEvent(client, member.guild, member, "leave")
+
+@client.event
 async def on_message(message):
     # Rerouting messages to commands if they start with server's prefix
     guild = message.guild
     guildId = guild.id
+
+    if message.author.bot:
+        return
+
+    await eventmanager.runEvent(client, message.guild, message, "message")
 
     if f"{guildId}" not in serverdatastore.jsonDatastore["servers"]:
         return
