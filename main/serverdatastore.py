@@ -6,7 +6,7 @@ jsonDatastore = {}
 guildSettings = {
     "prefix": "-",
     "autorole": "",
-    "welcome_message": "Hey %member%, welcome to QuantumCraft | MC!",
+    "welcome_message": "Hey %member%, welcome to Hydron Learning Club!",
     "welcome_channel": "welcome",
     "audit_log_channel": "audit-log"
 }
